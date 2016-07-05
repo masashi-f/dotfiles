@@ -17,8 +17,12 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'kevinw/pyflakes-vim'
+NeoBundle 'tyru/caw.vim.git'
 NeoBundleLazy "davidhalter/jedi-vim", {
     \ "autoload": { "filetypes":["python", "python3","djangohtml"] }}
+
+nmap <C-k> <Plug>(caw::i:toggle)
+vmap <C-K> <Plug>(caw::i:toggle)
 
 "Jedi for python
 if ! empty(neobundle#get("jedi-vim"))
