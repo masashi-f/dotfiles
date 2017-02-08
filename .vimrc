@@ -140,8 +140,21 @@ call neobundle#end()
 NeoBundleCheck
 "End NeoBundle Scripst-----------------------------------------------------
 
-"カラースキーマを変更する
+" カラースキーマを変更する
+" 後始末もちゃんとする
+let s:saved_t_Co=&t_Co
 set t_Co=256
+
+" Restore t_Co for less command after vim quit
+augroup restore_t_Co
+    autocmd!
+    if s:saved_t_Co == 8
+        autocmd VimLeave * let &t_Co = 256
+    else
+        autocmd VimLeave * let &t_Co = 8
+    endif 
+    autocmd VimLeave * let &t_Co = s:saved_t_Co
+augroup END
 
 if &t_Co > 2 || has("gui_running")
 	"シンタックスハイライトを有効にする
