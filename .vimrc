@@ -19,6 +19,7 @@ NeoBundle 'Shougo/vimshell'
 NeoBundle 'kevinw/pyflakes-vim'
 NeoBundle 'tyru/caw.vim.git'
 NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
@@ -164,8 +165,14 @@ if &t_Co > 2 || has("gui_running")
 endif
 	
 
+
+" キーバインディング
+nnoremap H ^
+nnoremap L $
+
 "カラースキーマ設定
-colorscheme molokai
+set background=dark
+colorscheme solarized
 
 " ウィンドウ枠にタイトルを表示する
 set title
